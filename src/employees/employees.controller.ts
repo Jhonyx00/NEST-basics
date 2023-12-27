@@ -12,7 +12,7 @@ import { EmployeesService } from './employees.service';
 import { Prisma, Role } from '@prisma/client';
 import { Throttle, SkipThrottle } from '@nestjs/throttler';
 
-@SkipThrottle()
+@SkipThrottle() // every route ignores rate limitator
 @Controller('employees')
 export class EmployeesController {
   constructor(private readonly employeesService: EmployeesService) {}
